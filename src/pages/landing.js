@@ -25,6 +25,7 @@ import code from "../code.png";
 import pdf from "../resume.pdf";
 import logo from "../logo.jpg";
 import duke from "../code-laptop-programming-coding.jpg";
+import robot from "../robot.jpg"
 
 function About() {
   return (
@@ -143,7 +144,7 @@ function Projects() {
           </Flex>
           <Flex px={10} flex={1} justify={"center"} my={100}>
             <Stack spacing={6} w={"full"} maxW={"lg"} alignItems={"center"}>
-              <Image src={code} width={600} height={300} borderRadius={30} />
+              <Image src={robot} width={600} height={300} borderRadius={30} />
               <Heading>mBot project</Heading>
               <Text fontSize={{ base: "md", lg: "lg" }} color={"gray.500"}>
                 a robotic vehicle ‘mBot’ that steers itself
@@ -157,6 +158,9 @@ function Projects() {
 }
 
 function Contact() {
+  const handleClick = () => {
+    window.open("http://www.linkedin.com/in/chiew-yi-xiang");
+  };
   return (
     <section id="section-three">
       <Stack
@@ -175,6 +179,7 @@ function Contact() {
           <Stack my={15}>
             <Text >social —</Text>
             <Button
+              onClick={handleClick}
               rounded={"full"}
               colorScheme={"messenger"}
               leftIcon={<SiLinkedin />}
