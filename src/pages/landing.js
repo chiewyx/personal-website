@@ -107,7 +107,7 @@ function Projects() {
           <Flex px={10} flex={1} justify={"center"} my={75}>
             <Stack spacing={6} w={"full"} maxW={"lg"} alignItems={"center"}>
               <Image src={logo} width={300} height={300} borderRadius={30} />
-              <Heading>HawkerTown</Heading>
+              <Heading as={ReactRouterLink} to="/hawkertown" >HawkerTown</Heading>
               <Text fontSize={{ base: "md", lg: "lg" }} color={"gray.500"}>
                 webapp that offers a one-stop solution for hawkers and suppliers
                 to connect
@@ -123,7 +123,7 @@ function Projects() {
               my={75}
             >
               <Image src={code} width={600} height={300} borderRadius={30} />
-              <Heading>Alex robot</Heading>
+              <Heading as={ReactRouterLink} to="/alex">Alex robot</Heading>
               <Text fontSize={{ base: "md", lg: "lg" }} color={"gray.500"}>
                 a search and rescue robotic vehicle ‘Alex’ to map out the
                 location it is placed in.
