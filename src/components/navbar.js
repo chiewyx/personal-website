@@ -30,7 +30,6 @@ export default function WithSubnavigation() {
         py={{ base: 2 }}
         px={{ base: 4 }}
         borderBottom={1}
-        
         borderColor={useColorModeValue("gray.200", "gray.900")}
         align={"center"}
       >
@@ -59,7 +58,6 @@ export default function WithSubnavigation() {
               fontWeight={"light"}
             >
               {" "}
-              {" "}
             </Text>
           </Button>
           <Square size="40px" bg="white" color="white"></Square>
@@ -76,24 +74,26 @@ export default function WithSubnavigation() {
             fontSize={"lg"}
             fontWeight={400}
             variant={"link"}
-            to="/#section-one"
+            to="/about"
           >
             About
           </Button>
           <Button
-            as={ReactRouterLink}
+            as={HashLink}
+            variant={"link"}
+            href={"Projects"}
             fontSize={"lg"}
             fontWeight={400}
-            variant="link"
             to="/#section-two"
           >
             Projects
           </Button>
           <Button
-            as={ReactRouterLink}
+            as={HashLink}
             fontSize={"lg"}
             fontWeight={400}
             variant={"link"}
+            href={"Contact"}
             to="/#section-three"
           >
             Contact

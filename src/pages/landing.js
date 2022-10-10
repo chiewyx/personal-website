@@ -16,6 +16,7 @@ import {
   AspectRatio,
 } from "@chakra-ui/react";
 import { SiLinkedin } from "react-icons/si";
+import { Link as ReactRouterLink } from "react-router-dom";
 import { Box } from "@chakra-ui/react";
 import AvatarWithRipple from "../components/avatar";
 import hawkertown from "../hawkertown.png";
@@ -23,6 +24,7 @@ import raspberrypi from "../raspberrypi.png";
 import code from "../code.png";
 import pdf from "../resume.pdf";
 import logo from "../logo.jpg";
+import duke from "../code-laptop-programming-coding.jpg";
 
 function About() {
   return (
@@ -52,9 +54,12 @@ function About() {
                 Chiew Yi Xiang
               </Text>{" "}
             </Heading>
-            <Text fontSize={{ base: "md", lg: "lg" }} color={"gray.500"}>
-              a Computer Engineering Undergraduate at National University of
-              Singapore and also an aspiring barista.
+            <Text fontSize={"3xl"} color={"gray.500"} font={"sans-serif"}>
+              <span style={{ textDecoration: "line-through" }}>
+                aspiring barista
+              </span>{" "}
+              computer engineering undergraduate at National University of
+              Singapore
             </Text>
             <Stack direction={{ base: "column", md: "row" }} spacing={4}>
               <Button
@@ -70,7 +75,9 @@ function About() {
               >
                 resume
               </Button>
-              <Button rounded={"full"}>about</Button>
+              <Button as={ReactRouterLink} rounded={"full"} to="/about">
+                about
+              </Button>
             </Stack>
           </Stack>
         </Flex>
@@ -126,21 +133,20 @@ function Projects() {
         <Stack direction={{ base: "column", md: "row" }}>
           <Flex px={10} flex={1} justify={"center"}>
             <Stack spacing={6} w={"full"} maxW={"lg"} alignItems={"center"}>
-              <Image src={logo} width={300} height={300} borderRadius={30} />
-              <Heading>HawkerTown</Heading>
+              <Image src={duke} width={600} height={300} borderRadius={30} />
+              <Heading>Duke chatbot</Heading>
               <Text fontSize={{ base: "md", lg: "lg" }} color={"gray.500"}>
-                webapp that offers a one-stop solution for hawkers and suppliers
-                to connect
+                CLI chatbot that tracks tasks/events/deadlines, singaporean
+                uncle style
               </Text>
             </Stack>
           </Flex>
           <Flex px={10} flex={1} justify={"center"} my={100}>
             <Stack spacing={6} w={"full"} maxW={"lg"} alignItems={"center"}>
               <Image src={code} width={600} height={300} borderRadius={30} />
-              <Heading>Alex robot</Heading>
+              <Heading>mBot project</Heading>
               <Text fontSize={{ base: "md", lg: "lg" }} color={"gray.500"}>
-                a search and rescue robotic vehicle ‘Alex’ to map out the
-                location it is placed in.
+                a robotic vehicle ‘mBot’ that steers itself
               </Text>
             </Stack>
           </Flex>
@@ -153,20 +159,21 @@ function Projects() {
 function Contact() {
   return (
     <section id="section-three">
-      <Stack direction={"row"} minH={"25vh"} mx={125} justifyContent={"space-between"}>
-      <Flex >
-        <Stack my={15}>
-          <Text>
-            Chiew Yi Xiang —
-          </Text>
-          <Text>
-            computer engineering undergraduate
-          </Text>
-        </Stack>
-      </Flex>
-        <Flex >
+      <Stack
+        direction={"row"}
+        minH={"25vh"}
+        mx={125}
+        justifyContent={"space-between"}
+      >
+        <Flex>
           <Stack my={15}>
-            <Text>social —</Text>
+            <Text textAlign={"left"}>Chiew Yi Xiang —</Text>
+            <Text textAlign={"left"}>computer engineering undergraduate</Text>
+          </Stack>
+        </Flex>
+        <Flex>
+          <Stack my={15}>
+            <Text >social —</Text>
             <Button
               rounded={"full"}
               colorScheme={"messenger"}
@@ -176,10 +183,10 @@ function Contact() {
             </Button>
           </Stack>
         </Flex>
-        <Flex >
+        <Flex>
           <Stack my={15}>
-            <Text>contact —</Text>
-            <Text>yixiangchiew@gmail.com</Text>
+            <Text textAlign={"left"}>contact —</Text>
+            <Text textAlign={"left"}>yixiangchiew@gmail.com</Text>
           </Stack>
         </Flex>
       </Stack>
