@@ -1,26 +1,14 @@
 import WithSubnavigation from "../components/navbar";
 import {
-  Center,
-  Spacer,
-  Grid,
-  VStack,
   Text,
   Flex,
   Image,
-  HStack,
   Button,
   useBreakpointValue,
   Stack,
   Heading,
-  Avatar,
-  AspectRatio,
 } from "@chakra-ui/react";
-import { SiLinkedin } from "react-icons/si";
 import { Link as ReactRouterLink } from "react-router-dom";
-import { Box } from "@chakra-ui/react";
-import AvatarWithRipple from "../components/avatar";
-import hawkertown from "../hawkertown.png";
-import raspberrypi from "../raspberrypi.png";
 import code from "../code.png";
 import pdf from "../resume.pdf";
 import logo from "../logo.jpg";
@@ -111,7 +99,7 @@ function Projects() {
         </Heading>
         <Stack direction={{ base: "column", md: "row" }}>
           <Flex px={10} flex={1} justify={"center"} my={75}>
-            <Stack spacing={4} w={"full"} maxW={"lg"} >
+            <Stack spacing={4} w={"full"} maxW={"lg"}>
               <Image src={logo} width={600} height={300} borderRadius={30} />
               <Heading as={ReactRouterLink} to="/hawkertown" textAlign={"left"}>
                 HawkerTown
@@ -129,14 +117,9 @@ function Projects() {
             </Stack>
           </Flex>
           <Flex px={10} flex={1} justify={"center"} my={100}>
-            <Stack
-              spacing={4}
-              w={"full"}
-              maxW={"lg"}
-              my={75}
-            >
+            <Stack spacing={4} w={"full"} maxW={"lg"} my={75}>
               <Image src={code} width={600} height={300} borderRadius={30} />
-              <Heading as={ReactRouterLink} to="/alex" textAlign={"left"} >
+              <Heading as={ReactRouterLink} to="/alex" textAlign={"left"}>
                 Alex robot
               </Heading>
               <Text
@@ -154,7 +137,7 @@ function Projects() {
         </Stack>
         <Stack direction={{ base: "column", md: "row" }}>
           <Flex px={10} flex={1} justify={"center"}>
-            <Stack spacing={4} w={"full"} maxW={"lg"} >
+            <Stack spacing={4} w={"full"} maxW={"lg"}>
               <Image src={duke} width={600} height={300} borderRadius={30} />
               <Heading textAlign={"left"}>Duke chatbot</Heading>
               <Text
@@ -170,7 +153,7 @@ function Projects() {
             </Stack>
           </Flex>
           <Flex px={10} flex={1} justify={"center"} my={100}>
-            <Stack spacing={4} w={"full"} maxW={"lg"} >
+            <Stack spacing={4} w={"full"} maxW={"lg"}>
               <Image src={robot} width={600} height={300} borderRadius={30} />
               <Heading textAlign={"left"}>mBot project</Heading>
               <Text

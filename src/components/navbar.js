@@ -5,17 +5,12 @@ import {
   IconButton,
   Button,
   Stack,
-  Icon,
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
   useColorModeValue,
   useDisclosure,
   Square,
 } from "@chakra-ui/react";
 import { HashLink } from "react-router-hash-link";
-
-import { HamburgerIcon, CloseIcon, ChevronRightIcon } from "@chakra-ui/icons";
+import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { Link as ReactRouterLink } from "react-router-dom";
 
 export default function WithSubnavigation() {
@@ -84,6 +79,7 @@ export default function WithSubnavigation() {
             href={"Projects"}
             fontSize={"lg"}
             fontWeight={400}
+            smooth
             to="/#section-two"
           >
             Projects
@@ -94,6 +90,7 @@ export default function WithSubnavigation() {
             fontWeight={400}
             variant={"link"}
             href={"Contact"}
+            smooth
             to="/#section-three"
           >
             Contact

@@ -1,10 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
-import { Route, Routes } from 'react-router-dom';
-import LandingPage from './pages/landing';
-import AboutPage from './pages/about';
-import HawkerTownPage from './pages/projects/hawkertown';
-import AlexPage from './pages/projects/alex';
+import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import LandingPage from "./pages/landing";
+import AboutPage from "./pages/about";
+import HawkerTownPage from "./pages/projects/hawkertown";
+import AlexPage from "./pages/projects/alex";
 
 function App() {
   return (

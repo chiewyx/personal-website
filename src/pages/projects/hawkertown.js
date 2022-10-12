@@ -11,16 +11,10 @@ import {
   useColorModeValue,
   Button,
 } from "@chakra-ui/react";
-import {
-  IoAnalyticsSharp,
-  IoLogoBitcoin,
-  IoSearchSharp,
-  IoPencil
-} from "react-icons/io5";
-import { ReactElement } from "react";
+import { IoAnalyticsSharp, IoSearchSharp, IoPencil } from "react-icons/io5";
 import WithSubnavigation from "../../components/navbar";
 import hawkertown from "../../dashboard.png";
-import landing from "../../hawkertown.png"
+import landing from "../../hawkertown.png";
 
 const Feature = ({ text, icon, iconBg }) => {
   return (
@@ -68,8 +62,8 @@ function SplitWithImage() {
             a one-stop solution to allow hawkers and suppliers to interact
           </Heading>
           <Text textAlign={"left"} color={"gray.500"} fontSize={"lg"}>
-            HawkerTown provides hawkers and suppliers with a platform to integrate both
-            invoices and orders for easy tracking.
+            HawkerTown provides hawkers and suppliers with a platform to
+            integrate both invoices and orders for easy tracking.
           </Text>
           <Stack
             spacing={4}
@@ -111,12 +105,7 @@ function SplitWithImage() {
               height={225}
               width={600}
             />
-            <Image 
-                rounded={"md"}
-                src={landing}
-                height={225}
-                width={600}
-            />
+            <Image rounded={"md"} src={landing} height={225} width={600} />
           </Stack>
         </Flex>
       </SimpleGrid>
