@@ -182,7 +182,7 @@ function Contact() {
       <Stack
         direction={"row"}
         minH={"25vh"}
-        mx={125}
+        mx={215}
         justifyContent={"space-between"}
       >
         <Flex>
