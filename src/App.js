@@ -4,6 +4,7 @@ import LandingPage from "./pages/landing";
 import AboutPage from "./pages/about";
 import HawkerTownPage from "./pages/projects/hawkertown";
 import AlexPage from "./pages/projects/alex";
+import UpcyclePage from "./pages/projects/upcycle";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/hawkertown" element={<HawkerTownPage />} />
         <Route path="/alex" element={<AlexPage />} />
+        <Route path="/upcycle" element={<UpcyclePage />} />
       </Routes>
     </div>
   );

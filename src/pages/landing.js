@@ -12,8 +12,8 @@ import { Link as ReactRouterLink } from "react-router-dom";
 import code from "../code.png";
 import pdf from "../resume.pdf";
 import logo from "../logo.jpg";
-import duke from "../code-laptop-programming-coding.jpg";
 import robot from "../robot.jpg";
+import upcycle from "../Up.png";
 
 function About() {
   return (
@@ -138,8 +138,8 @@ function Projects() {
         <Stack direction={{ base: "column", md: "row" }}>
           <Flex px={10} flex={1} justify={"center"}>
             <Stack spacing={4} w={"full"} maxW={"lg"}>
-              <Image src={duke} width={600} height={300} borderRadius={30} />
-              <Heading textAlign={"left"}>Duke chatbot</Heading>
+              <Image src={upcycle} width={600} height={300} borderRadius={30} />
+              <Heading as={ReactRouterLink} to="/upcycle" textAlign={"left"}>Upcycle</Heading>
               <Text
                 textAlign={"justify"}
                 fontSize={{ base: "md", lg: "lg" }}
@@ -147,8 +147,8 @@ function Projects() {
                 fontFamily="sans-serif"
                 fontWeight={"thin"}
               >
-                CLI chatbot that tracks tasks/events/deadlines, singaporean
-                uncle style
+                Upcycle - a perfect desktop app dedicate to managing rental businesses. 
+                It is developed for rental business managers, who can type fast to efficiently keep track of all of their customers, items, and transactions via a Command Line Interface.
               </Text>
             </Stack>
           </Flex>
