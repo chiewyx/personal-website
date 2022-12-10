@@ -4,8 +4,7 @@ import { Text, Stack, Heading } from "@chakra-ui/react";
 export default function AboutPage() {
   return (
     <div className="AboutPage">
-      <WithSubnavigation />
-      <Stack mt={200} px={500} spacing={10} justifyItems={"left"}>
+      <Stack mt={200} px={500} spacing={10} justifyItems={"left"} minH={"65vh"}>
         <Heading textAlign={"left"}>
           hi, i'm yixiang, a computer engineering undergrad at NUS and also an
           aspiring barista.

@@ -6,8 +6,7 @@ import {
   Button,
   Stack,
   useColorModeValue,
-  useDisclosure,
-  Square,
+  useDisclosure
 } from "@chakra-ui/react";
 import { HashLink } from "react-router-hash-link";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
@@ -17,9 +16,9 @@ export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <Box>
+    <Box position="sticky" top={0}>
       <Flex
-        bg={useColorModeValue("white", "gray.800")}
+        bg={useColorModeValue("gray.50", "gray.800")}
         color={useColorModeValue("gray.600", "white")}
         minH={"60px"}
         py={{ base: 2 }}
@@ -44,18 +43,19 @@ export default function WithSubnavigation() {
         </Flex>
 
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
-          <Button variant={"link"} as={ReactRouterLink} to="/">
+          <Button variant={"link"} as={ReactRouterLink} to="/" display={"none"}>
             <Text
               fontSize="4xl"
               textAlign={"center"}
               fontFamily="Gill Sans"
               color="gray.600"
               fontWeight={"light"}
+              display={"none"}
             >
               {" "}
             </Text>
           </Button>
-          <Square size="40px" bg="white" color="white"></Square>
+          
         </Flex>
 
         <Stack
@@ -65,11 +65,13 @@ export default function WithSubnavigation() {
           spacing={50}
         >
           <Button
-            as={ReactRouterLink}
+            as={HashLink}
+            href={"about"}
             fontSize={"lg"}
             fontWeight={400}
             variant={"link"}
-            to="/about"
+            smooth
+            to="/#section-one"
           >
             About
           </Button>

@@ -14,12 +14,19 @@ import pdf from "../resume.pdf";
 import logo from "../logo.jpg";
 import robot from "../robot.jpg";
 import upcycle from "../Up.png";
+import { useState } from "react";
+import AboutPage from "./about.js"
 
 function About() {
+  const [imageSize, setImageSize] = useState({
+    width: 450,
+    height: 300,
+  });
+
   return (
     <section id="section-one">
       <Stack
-        minH={"95vh"}
+        minH={"75vh"}
         direction={{ base: "column", md: "row" }}
         spacing={50}
       >
@@ -79,13 +86,29 @@ function About() {
         <Flex py={150} flex={1} ml={100}>
           <Image
             src="https://i.imgur.com/BcgzA9A.jpg"
-            width={450}
-            height={300}
             top={250}
             borderRadius={30}
+            style={{
+              width: imageSize.width,
+              height: imageSize.height,
+              transition: "width 0.5s, height 0.5s",
+            }}
+            onMouseOver={() =>
+              setImageSize({
+                width: 600,
+                height: 400,
+              })
+            }
+            onMouseOut={() =>
+              setImageSize({
+                width: 450,
+                height: 300,
+              })
+            }
           />
         </Flex>
       </Stack>
+      <AboutPage />
     </section>
   );
 }
@@ -139,7 +162,9 @@ function Projects() {
           <Flex px={10} flex={1} justify={"center"}>
             <Stack spacing={4} w={"full"} maxW={"lg"}>
               <Image src={upcycle} width={600} height={300} borderRadius={30} />
-              <Heading as={ReactRouterLink} to="/upcycle" textAlign={"left"}>Upcycle</Heading>
+              <Heading as={ReactRouterLink} to="/upcycle" textAlign={"left"}>
+                Upcycle
+              </Heading>
               <Text
                 textAlign={"justify"}
                 fontSize={{ base: "md", lg: "lg" }}
@@ -147,8 +172,10 @@ function Projects() {
                 fontFamily="sans-serif"
                 fontWeight={"thin"}
               >
-                Upcycle - a perfect desktop app dedicate to managing rental businesses. 
-                It is developed for rental business managers, who can type fast to efficiently keep track of all of their customers, items, and transactions via a Command Line Interface.
+                Upcycle - a perfect desktop app dedicate to managing rental
+                businesses. It is developed for rental business managers, who
+                can type fast to efficiently keep track of all of their
+                customers, items, and transactions via a Command Line Interface.
               </Text>
             </Stack>
           </Flex>
