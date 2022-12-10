@@ -403,7 +403,7 @@ function Contact() {
 export default function LandingPage() {
   return (
     <div className="LandingPage">
-      <WithSubnavigation zIndex={9999} />
+      <WithSubnavigation />
       <About />
       <Projects />
       <Contact />
