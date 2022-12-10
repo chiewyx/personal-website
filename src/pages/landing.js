@@ -12,6 +12,7 @@ import {
   Box,
 } from "@chakra-ui/react";
 import { Link as ReactRouterLink } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import code from "../code.png";
 import pdf from "../resume.pdf";
 import logo from "../logo.jpg";
@@ -80,7 +81,7 @@ function About() {
               >
                 resume
               </Button>
-              <Button as={ReactRouterLink} rounded={"full"} to="/about">
+              <Button as={HashLink} rounded={"full"} to="/#section-four" smooth>
                 about
               </Button>
             </Stack>
@@ -111,7 +112,9 @@ function About() {
           />
         </Flex>
       </Stack>
+      <section id="section-four">
       <AboutPage />
+      </section>
     </section>
   );
 }
