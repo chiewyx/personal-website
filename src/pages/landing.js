@@ -7,6 +7,9 @@ import {
   useBreakpointValue,
   Stack,
   Heading,
+  Grid,
+  GridItem,
+  Box,
 } from "@chakra-ui/react";
 import { Link as ReactRouterLink } from "react-router-dom";
 import code from "../code.png";
@@ -15,7 +18,7 @@ import logo from "../logo.jpg";
 import robot from "../robot.jpg";
 import upcycle from "../Up.png";
 import { useState } from "react";
-import AboutPage from "./about.js"
+import AboutPage from "./about.js";
 
 function About() {
   const [imageSize, setImageSize] = useState({
@@ -114,16 +117,65 @@ function About() {
 }
 
 function Projects() {
+  const [imageSize1, setImageSize1] = useState({
+    width: 500,
+    height: 350,
+  });
+  const [imageSize2, setImageSize2] = useState({
+    width: 500,
+    height: 350,
+  });
+  const [imageSize3, setImageSize3] = useState({
+    width: 500,
+    height: 350,
+  });
+  const [imageSize4, setImageSize4] = useState({
+    width: 500,
+    height: 350,
+  });
+
   return (
     <section id="section-two">
-      <Stack minH={"165vh"}>
-        <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}>
+      <Stack minH={"165vh"} justifyContent="center">
+        <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }} justifyItems={"center"}>
           Projects
         </Heading>
-        <Stack direction={{ base: "column", md: "row" }}>
-          <Flex px={10} flex={1} justify={"center"} my={75}>
-            <Stack spacing={4} w={"full"} maxW={"lg"}>
-              <Image src={logo} width={600} height={300} borderRadius={30} />
+        <Grid
+          templateColumns="repeat(2, 1fr)"
+          spacing={5}
+          justifyItems="center"
+        >
+          <GridItem>
+            <Stack spacing={4} my={50} paddingLeft={100}>
+              <Box
+                width={600}
+                height={400}
+                justifyContent="left"
+                alignItems="center"
+                display={"flex"}
+              >
+                <Image
+                  src={logo}
+                  borderRadius={30}
+                  style={{
+                    width: imageSize1.width,
+                    height: imageSize1.height,
+                    transition: "width 0.5s, height 0.5s",
+                  }}
+                  onMouseOver={() =>
+                    setImageSize1({
+                      width: 550,
+                      height: 400,
+                    })
+                  }
+                  onMouseOut={() =>
+                    setImageSize1({
+                      width: 500,
+                      height: 350,
+                    })
+                  }
+                />
+              </Box>
               <Heading as={ReactRouterLink} to="/hawkertown" textAlign={"left"}>
                 HawkerTown
               </Heading>
@@ -134,14 +186,43 @@ function Projects() {
                 fontFamily="sans-serif"
                 fontWeight={"thin"}
               >
-                webapp that offers a one-stop solution for hawkers and suppliers
-                to connect
+                webapp that offers a one-stop solution for hawkers <br/>
+                and suppliers to connect
               </Text>
             </Stack>
-          </Flex>
-          <Flex px={10} flex={1} justify={"center"} my={100}>
-            <Stack spacing={4} w={"full"} maxW={"lg"} my={75}>
-              <Image src={code} width={600} height={300} borderRadius={30} />
+          </GridItem>
+          <GridItem>
+            <Stack spacing={4} my={50} paddingLeft={100}>
+              <Box
+                width={600}
+                height={400}
+                justifyContent="left"
+                alignItems="center"
+                display={"flex"}
+              >
+                <Image
+                  src={code}
+                  style={{
+                    width: imageSize2.width,
+                    height: imageSize2.height,
+                    transition: "width 0.5s, height 0.5s",
+                    position: "relative",
+                  }}
+                  onMouseOver={() =>
+                    setImageSize2({
+                      width: 550,
+                      height: 400,
+                    })
+                  }
+                  onMouseOut={() =>
+                    setImageSize2({
+                      width: 500,
+                      height: 350,
+                    })
+                  }
+                  borderRadius={30}
+                />
+              </Box>
               <Heading as={ReactRouterLink} to="/alex" textAlign={"left"}>
                 Alex robot
               </Heading>
@@ -151,17 +232,44 @@ function Projects() {
                 color={"gray.500"}
                 fontFamily="sans-serif"
                 fontWeight={"thin"}
+                position={"relative"}
               >
                 a search and rescue robotic vehicle ‘Alex’ to map out the
-                location it is placed in.
+                location <br /> it is placed in.
               </Text>
             </Stack>
-          </Flex>
-        </Stack>
-        <Stack direction={{ base: "column", md: "row" }}>
-          <Flex px={10} flex={1} justify={"center"}>
-            <Stack spacing={4} w={"full"} maxW={"lg"}>
-              <Image src={upcycle} width={600} height={300} borderRadius={30} />
+          </GridItem>
+          <GridItem>
+            <Stack spacing={4} my={50} paddingLeft={100}>
+              <Box
+                width={600}
+                height={400}
+                justifyContent="left"
+                alignItems="center"
+                display={"flex"}
+              >
+                <Image
+                  src={upcycle}
+                  style={{
+                    width: imageSize3.width,
+                    height: imageSize3.height,
+                    transition: "width 0.5s, height 0.5s",
+                  }}
+                  onMouseOver={() =>
+                    setImageSize3({
+                      width: 550,
+                      height: 400,
+                    })
+                  }
+                  onMouseOut={() =>
+                    setImageSize3({
+                      width: 500,
+                      height: 350,
+                    })
+                  }
+                  borderRadius={30}
+                />
+              </Box>
               <Heading as={ReactRouterLink} to="/upcycle" textAlign={"left"}>
                 Upcycle
               </Heading>
@@ -172,16 +280,41 @@ function Projects() {
                 fontFamily="sans-serif"
                 fontWeight={"thin"}
               >
-                Upcycle - a perfect desktop app dedicate to managing rental
-                businesses. It is developed for rental business managers, who
-                can type fast to efficiently keep track of all of their
-                customers, items, and transactions via a Command Line Interface.
+                Upcycle - a desktop app dedicated to managing rental businesses.
               </Text>
             </Stack>
-          </Flex>
-          <Flex px={10} flex={1} justify={"center"} my={100}>
-            <Stack spacing={4} w={"full"} maxW={"lg"}>
-              <Image src={robot} width={600} height={300} borderRadius={30} />
+          </GridItem>
+          <GridItem>
+            <Stack spacing={4} my={50} paddingLeft={100}>
+              <Box
+                width={600}
+                height={400}
+                justifyContent="left"
+                alignItems="center"
+                display={"flex"}
+              >
+                <Image
+                  src={robot}
+                  style={{
+                    width: imageSize4.width,
+                    height: imageSize4.height,
+                    transition: "width 0.5s, height 0.5s",
+                  }}
+                  onMouseOver={() =>
+                    setImageSize4({
+                      width: 550,
+                      height: 400,
+                    })
+                  }
+                  onMouseOut={() =>
+                    setImageSize4({
+                      width: 500,
+                      height: 350,
+                    })
+                  }
+                  borderRadius={30}
+                />
+              </Box>
               <Heading textAlign={"left"}>mBot project</Heading>
               <Text
                 textAlign={"justify"}
@@ -193,8 +326,8 @@ function Projects() {
                 a robotic vehicle ‘mBot’ that steers itself
               </Text>
             </Stack>
-          </Flex>
-        </Stack>
+          </GridItem>
+        </Grid>
       </Stack>
     </section>
   );
@@ -270,7 +403,7 @@ function Contact() {
 export default function LandingPage() {
   return (
     <div className="LandingPage">
-      <WithSubnavigation />
+      <WithSubnavigation zIndex={9999} />
       <About />
       <Projects />
       <Contact />
