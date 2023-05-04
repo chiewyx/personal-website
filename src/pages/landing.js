@@ -358,16 +358,17 @@ function Projects() {
         <VStack minH={"165vh"} justifyContent="center">
           <Heading
             fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}
-            justifyItems={"center"}
+            justifyContent={"center"}
+            margin="auto"
           >
             Projects
           </Heading>
-          <Grid spacing={5} justifyItems="center">
+          <Grid justifyItems="center">
             <GridItem>
-              <Stack spacing={4} my={50} paddingLeft={100}>
+              <Stack spacing={4} my={50} justify={"center"} >
                 <Box
-                  width={600}
-                  height={400}
+                  width={300}
+                  height={200}
                   justifyContent="left"
                   alignItems="center"
                   display={"flex"}
@@ -376,22 +377,9 @@ function Projects() {
                     src={logo}
                     borderRadius={30}
                     style={{
-                      width: imageSize1.width,
-                      height: imageSize1.height,
-                      transition: "width 0.5s, height 0.5s",
+                      width: 300,
+                      height: 200,
                     }}
-                    onMouseOver={() =>
-                      setImageSize1({
-                        width: 550,
-                        height: 400,
-                      })
-                    }
-                    onMouseOut={() =>
-                      setImageSize1({
-                        width: 500,
-                        height: 350,
-                      })
-                    }
                   />
                 </Box>
                 <Heading
@@ -408,41 +396,27 @@ function Projects() {
                   fontFamily="sans-serif"
                   fontWeight={"thin"}
                 >
-                  webapp that offers a one-stop solution for hawkers <br />
+                  webapp that offers a one-stop solution for <br /> hawkers 
                   and suppliers to connect
                 </Text>
               </Stack>
             </GridItem>
             <GridItem>
-              <Stack spacing={4} my={50} paddingLeft={100}>
+              <Stack spacing={4} my={50} justify={"center"}>
                 <Box
-                  width={600}
-                  height={400}
+                  width={300}
+                  height={200}
                   justifyContent="left"
                   alignItems="center"
                   display={"flex"}
                 >
                   <Image
                     src={code}
-                    style={{
-                      width: imageSize2.width,
-                      height: imageSize2.height,
-                      transition: "width 0.5s, height 0.5s",
-                      position: "relative",
-                    }}
-                    onMouseOver={() =>
-                      setImageSize2({
-                        width: 550,
-                        height: 400,
-                      })
-                    }
-                    onMouseOut={() =>
-                      setImageSize2({
-                        width: 500,
-                        height: 350,
-                      })
-                    }
                     borderRadius={30}
+                    style={{
+                      width: 300,
+                      height: 200,
+                    }}
                   />
                 </Box>
                 <Heading as={ReactRouterLink} to="/alex" textAlign={"left"}>
@@ -456,16 +430,16 @@ function Projects() {
                   fontWeight={"thin"}
                   position={"relative"}
                 >
-                  a search and rescue robotic vehicle ‘Alex’ to map out the
-                  location <br /> it is placed in.
+                  a search and rescue robotic vehicle ‘Alex’ to 
+                  <br /> map out the location  it is placed in.
                 </Text>
               </Stack>
             </GridItem>
             <GridItem>
-              <Stack spacing={4} my={50} paddingLeft={100}>
+              <Stack spacing={4} my={50} justify={"center"}>
                 <Box
-                  width={600}
-                  height={400}
+                  width={300}
+                  height={200}
                   justifyContent="left"
                   alignItems="center"
                   display={"flex"}
@@ -473,22 +447,11 @@ function Projects() {
                   <Image
                     src={upcycle}
                     style={{
-                      width: imageSize3.width,
-                      height: imageSize3.height,
+                      width: 300,
+                      height: 200,
                       transition: "width 0.5s, height 0.5s",
                     }}
-                    onMouseOver={() =>
-                      setImageSize3({
-                        width: 550,
-                        height: 400,
-                      })
-                    }
-                    onMouseOut={() =>
-                      setImageSize3({
-                        width: 500,
-                        height: 350,
-                      })
-                    }
+                
                     borderRadius={30}
                   />
                 </Box>
@@ -502,16 +465,16 @@ function Projects() {
                   fontFamily="sans-serif"
                   fontWeight={"thin"}
                 >
-                  Upcycle - a desktop app dedicated to managing rental
-                  businesses.
+                  Upcycle - a desktop app dedicated to <br />
+                  managing rental businesses.
                 </Text>
               </Stack>
             </GridItem>
             <GridItem>
               <Stack spacing={4} my={50} paddingLeft={100}>
                 <Box
-                  width={600}
-                  height={400}
+                  width={300}
+                  height={200}
                   justifyContent="left"
                   alignItems="center"
                   display={"flex"}
@@ -519,22 +482,9 @@ function Projects() {
                   <Image
                     src={reviewlah}
                     style={{
-                      width: imageSize4.width,
-                      height: imageSize4.height,
-                      transition: "width 0.5s, height 0.5s",
+                      width: 300,
+                      height: 200,
                     }}
-                    onMouseOver={() =>
-                      setImageSize4({
-                        width: 550,
-                        height: 400,
-                      })
-                    }
-                    onMouseOut={() =>
-                      setImageSize4({
-                        width: 500,
-                        height: 350,
-                      })
-                    }
                     borderRadius={30}
                   />
                 </Box>
