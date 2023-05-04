@@ -10,6 +10,10 @@ import {
   Grid,
   GridItem,
   Box,
+  Center,
+  HStack,
+  VStack,
+  useMediaQuery,
 } from "@chakra-ui/react";
 import { Link as ReactRouterLink } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
@@ -18,6 +22,7 @@ import pdf from "../resume.pdf";
 import logo from "../logo.jpg";
 import robot from "../robot.jpg";
 import upcycle from "../Up.png";
+import reviewlah from "../2.png";
 import { useState } from "react";
 import AboutPage from "./about.js";
 
@@ -27,14 +32,16 @@ function About() {
     height: 300,
   });
 
+  const [isMobile] = useMediaQuery("(min-width: 900px)");
+
   return (
     <section id="section-one">
-      <Stack
+      <HStack
         minH={"75vh"}
         direction={{ base: "column", md: "row" }}
-        spacing={50}
+        minWidth={"50%"}
       >
-        <Flex mt={150} flex={1} justify={"center"} ml={200}>
+        <Flex flex={1} justify={"center"} margin="auto">
           <Stack spacing={6} w={"full"} maxW={"lg"}>
             <Heading fontSize={"7xl"}>
               <Text
@@ -87,33 +94,37 @@ function About() {
             </Stack>
           </Stack>
         </Flex>
-        <Flex py={150} flex={1} ml={100}>
-          <Image
-            src="https://i.imgur.com/BcgzA9A.jpg"
-            top={250}
-            borderRadius={30}
-            style={{
-              width: imageSize.width,
-              height: imageSize.height,
-              transition: "width 0.5s, height 0.5s",
-            }}
-            onMouseOver={() =>
-              setImageSize({
-                width: 600,
-                height: 400,
-              })
-            }
-            onMouseOut={() =>
-              setImageSize({
-                width: 450,
-                height: 300,
-              })
-            }
-          />
-        </Flex>
-      </Stack>
+        {isMobile ? (
+          <Flex flex={1} justify={"center"} margin="auto">
+            <Image
+              src="https://i.imgur.com/BcgzA9A.jpg"
+              top={250}
+              borderRadius={30}
+              style={{
+                width: imageSize.width,
+                height: imageSize.height,
+                transition: "width 0.5s, height 0.5s",
+              }}
+              onMouseOver={() =>
+                setImageSize({
+                  width: 600,
+                  height: 400,
+                })
+              }
+              onMouseOut={() =>
+                setImageSize({
+                  width: 450,
+                  height: 300,
+                })
+              }
+            />
+          </Flex>
+        ) : (
+          ""
+        )}
+      </HStack>
       <section id="section-four">
-      <AboutPage />
+        <AboutPage />
       </section>
     </section>
   );
@@ -137,201 +148,411 @@ function Projects() {
     height: 350,
   });
 
+  const [isMobile] = useMediaQuery("(min-width: 900px)");
+
   return (
     <section id="section-two">
-      <Stack minH={"165vh"} justifyContent="center">
-        <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }} justifyItems={"center"}>
-          Projects
-        </Heading>
-        <Grid
-          templateColumns="repeat(2, 1fr)"
-          spacing={5}
-          justifyItems="center"
-        >
-          <GridItem>
-            <Stack spacing={4} my={50} paddingLeft={100}>
-              <Box
-                width={600}
-                height={400}
-                justifyContent="left"
-                alignItems="center"
-                display={"flex"}
-              >
-                <Image
-                  src={logo}
-                  borderRadius={30}
-                  style={{
-                    width: imageSize1.width,
-                    height: imageSize1.height,
-                    transition: "width 0.5s, height 0.5s",
-                  }}
-                  onMouseOver={() =>
-                    setImageSize1({
-                      width: 550,
-                      height: 400,
-                    })
-                  }
-                  onMouseOut={() =>
-                    setImageSize1({
-                      width: 500,
-                      height: 350,
-                    })
-                  }
-                />
-              </Box>
-              <Heading as={ReactRouterLink} to="/hawkertown" textAlign={"left"}>
-                HawkerTown
-              </Heading>
-              <Text
-                textAlign={"justify"}
-                fontSize={{ base: "md", lg: "lg" }}
-                color={"gray.500"}
-                fontFamily="sans-serif"
-                fontWeight={"thin"}
-              >
-                webapp that offers a one-stop solution for hawkers <br/>
-                and suppliers to connect
-              </Text>
-            </Stack>
-          </GridItem>
-          <GridItem>
-            <Stack spacing={4} my={50} paddingLeft={100}>
-              <Box
-                width={600}
-                height={400}
-                justifyContent="left"
-                alignItems="center"
-                display={"flex"}
-              >
-                <Image
-                  src={code}
-                  style={{
-                    width: imageSize2.width,
-                    height: imageSize2.height,
-                    transition: "width 0.5s, height 0.5s",
-                    position: "relative",
-                  }}
-                  onMouseOver={() =>
-                    setImageSize2({
-                      width: 550,
-                      height: 400,
-                    })
-                  }
-                  onMouseOut={() =>
-                    setImageSize2({
-                      width: 500,
-                      height: 350,
-                    })
-                  }
-                  borderRadius={30}
-                />
-              </Box>
-              <Heading as={ReactRouterLink} to="/alex" textAlign={"left"}>
-                Alex robot
-              </Heading>
-              <Text
-                textAlign={"justify"}
-                fontSize={{ base: "md", lg: "lg" }}
-                color={"gray.500"}
-                fontFamily="sans-serif"
-                fontWeight={"thin"}
-                position={"relative"}
-              >
-                a search and rescue robotic vehicle ‘Alex’ to map out the
-                location <br /> it is placed in.
-              </Text>
-            </Stack>
-          </GridItem>
-          <GridItem>
-            <Stack spacing={4} my={50} paddingLeft={100}>
-              <Box
-                width={600}
-                height={400}
-                justifyContent="left"
-                alignItems="center"
-                display={"flex"}
-              >
-                <Image
-                  src={upcycle}
-                  style={{
-                    width: imageSize3.width,
-                    height: imageSize3.height,
-                    transition: "width 0.5s, height 0.5s",
-                  }}
-                  onMouseOver={() =>
-                    setImageSize3({
-                      width: 550,
-                      height: 400,
-                    })
-                  }
-                  onMouseOut={() =>
-                    setImageSize3({
-                      width: 500,
-                      height: 350,
-                    })
-                  }
-                  borderRadius={30}
-                />
-              </Box>
-              <Heading as={ReactRouterLink} to="/upcycle" textAlign={"left"}>
-                Upcycle
-              </Heading>
-              <Text
-                textAlign={"justify"}
-                fontSize={{ base: "md", lg: "lg" }}
-                color={"gray.500"}
-                fontFamily="sans-serif"
-                fontWeight={"thin"}
-              >
-                Upcycle - a desktop app dedicated to managing rental businesses.
-              </Text>
-            </Stack>
-          </GridItem>
-          <GridItem>
-            <Stack spacing={4} my={50} paddingLeft={100}>
-              <Box
-                width={600}
-                height={400}
-                justifyContent="left"
-                alignItems="center"
-                display={"flex"}
-              >
-                <Image
-                  src={robot}
-                  style={{
-                    width: imageSize4.width,
-                    height: imageSize4.height,
-                    transition: "width 0.5s, height 0.5s",
-                  }}
-                  onMouseOver={() =>
-                    setImageSize4({
-                      width: 550,
-                      height: 400,
-                    })
-                  }
-                  onMouseOut={() =>
-                    setImageSize4({
-                      width: 500,
-                      height: 350,
-                    })
-                  }
-                  borderRadius={30}
-                />
-              </Box>
-              <Heading textAlign={"left"}>mBot project</Heading>
-              <Text
-                textAlign={"justify"}
-                fontSize={{ base: "md", lg: "lg" }}
-                color={"gray.500"}
-                fontFamily="sans-serif"
-                fontWeight={"thin"}
-              >
-                a robotic vehicle ‘mBot’ that steers itself
-              </Text>
-            </Stack>
-          </GridItem>
-        </Grid>
-      </Stack>
+      {isMobile ? (
+        <VStack minH={"165vh"} justifyContent="center">
+          <Heading
+            fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}
+            justifyItems={"center"}
+          >
+            Projects
+          </Heading>
+          <Grid
+            templateColumns="repeat(2, 1fr)"
+            spacing={5}
+            justifyItems="center"
+          >
+            <GridItem>
+              <Stack spacing={4} my={50} paddingLeft={100}>
+                <Box
+                  width={600}
+                  height={400}
+                  justifyContent="left"
+                  alignItems="center"
+                  display={"flex"}
+                >
+                  <Image
+                    src={logo}
+                    borderRadius={30}
+                    style={{
+                      width: imageSize1.width,
+                      height: imageSize1.height,
+                      transition: "width 0.5s, height 0.5s",
+                    }}
+                    onMouseOver={() =>
+                      setImageSize1({
+                        width: 550,
+                        height: 400,
+                      })
+                    }
+                    onMouseOut={() =>
+                      setImageSize1({
+                        width: 500,
+                        height: 350,
+                      })
+                    }
+                  />
+                </Box>
+                <Heading
+                  as={ReactRouterLink}
+                  to="/hawkertown"
+                  textAlign={"left"}
+                >
+                  HawkerTown
+                </Heading>
+                <Text
+                  textAlign={"justify"}
+                  fontSize={{ base: "md", lg: "lg" }}
+                  color={"gray.500"}
+                  fontFamily="sans-serif"
+                  fontWeight={"thin"}
+                >
+                  webapp that offers a one-stop solution for hawkers <br />
+                  and suppliers to connect
+                </Text>
+              </Stack>
+            </GridItem>
+            <GridItem>
+              <Stack spacing={4} my={50} paddingLeft={100}>
+                <Box
+                  width={600}
+                  height={400}
+                  justifyContent="left"
+                  alignItems="center"
+                  display={"flex"}
+                >
+                  <Image
+                    src={code}
+                    style={{
+                      width: imageSize2.width,
+                      height: imageSize2.height,
+                      transition: "width 0.5s, height 0.5s",
+                      position: "relative",
+                    }}
+                    onMouseOver={() =>
+                      setImageSize2({
+                        width: 550,
+                        height: 400,
+                      })
+                    }
+                    onMouseOut={() =>
+                      setImageSize2({
+                        width: 500,
+                        height: 350,
+                      })
+                    }
+                    borderRadius={30}
+                  />
+                </Box>
+                <Heading as={ReactRouterLink} to="/alex" textAlign={"left"}>
+                  Alex robot
+                </Heading>
+                <Text
+                  textAlign={"justify"}
+                  fontSize={{ base: "md", lg: "lg" }}
+                  color={"gray.500"}
+                  fontFamily="sans-serif"
+                  fontWeight={"thin"}
+                  position={"relative"}
+                >
+                  a search and rescue robotic vehicle ‘Alex’ to map out the
+                  location <br /> it is placed in.
+                </Text>
+              </Stack>
+            </GridItem>
+            <GridItem>
+              <Stack spacing={4} my={50} paddingLeft={100}>
+                <Box
+                  width={600}
+                  height={400}
+                  justifyContent="left"
+                  alignItems="center"
+                  display={"flex"}
+                >
+                  <Image
+                    src={upcycle}
+                    style={{
+                      width: imageSize3.width,
+                      height: imageSize3.height,
+                      transition: "width 0.5s, height 0.5s",
+                    }}
+                    onMouseOver={() =>
+                      setImageSize3({
+                        width: 550,
+                        height: 400,
+                      })
+                    }
+                    onMouseOut={() =>
+                      setImageSize3({
+                        width: 500,
+                        height: 350,
+                      })
+                    }
+                    borderRadius={30}
+                  />
+                </Box>
+                <Heading as={ReactRouterLink} to="/upcycle" textAlign={"left"}>
+                  Upcycle
+                </Heading>
+                <Text
+                  textAlign={"justify"}
+                  fontSize={{ base: "md", lg: "lg" }}
+                  color={"gray.500"}
+                  fontFamily="sans-serif"
+                  fontWeight={"thin"}
+                >
+                  Upcycle - a desktop app dedicated to managing rental
+                  businesses.
+                </Text>
+              </Stack>
+            </GridItem>
+            <GridItem>
+              <Stack spacing={4} my={50} paddingLeft={100}>
+                <Box
+                  width={600}
+                  height={400}
+                  justifyContent="left"
+                  alignItems="center"
+                  display={"flex"}
+                >
+                  <Image
+                    src={reviewlah}
+                    style={{
+                      width: imageSize4.width,
+                      height: imageSize4.height,
+                      transition: "width 0.5s, height 0.5s",
+                    }}
+                    onMouseOver={() =>
+                      setImageSize4({
+                        width: 550,
+                        height: 400,
+                      })
+                    }
+                    onMouseOut={() =>
+                      setImageSize4({
+                        width: 500,
+                        height: 350,
+                      })
+                    }
+                    borderRadius={30}
+                  />
+                </Box>
+                <Heading textAlign={"left"}>reviewLah!</Heading>
+                <Text
+                  textAlign={"justify"}
+                  fontSize={{ base: "md", lg: "lg" }}
+                  color={"gray.500"}
+                  fontFamily="sans-serif"
+                  fontWeight={"thin"}
+                >
+                  webapp for users to review the accessibility of a location
+                </Text>
+              </Stack>
+            </GridItem>
+          </Grid>
+        </VStack>
+      ) : (
+        <VStack minH={"165vh"} justifyContent="center">
+          <Heading
+            fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}
+            justifyItems={"center"}
+          >
+            Projects
+          </Heading>
+          <Grid spacing={5} justifyItems="center">
+            <GridItem>
+              <Stack spacing={4} my={50} paddingLeft={100}>
+                <Box
+                  width={600}
+                  height={400}
+                  justifyContent="left"
+                  alignItems="center"
+                  display={"flex"}
+                >
+                  <Image
+                    src={logo}
+                    borderRadius={30}
+                    style={{
+                      width: imageSize1.width,
+                      height: imageSize1.height,
+                      transition: "width 0.5s, height 0.5s",
+                    }}
+                    onMouseOver={() =>
+                      setImageSize1({
+                        width: 550,
+                        height: 400,
+                      })
+                    }
+                    onMouseOut={() =>
+                      setImageSize1({
+                        width: 500,
+                        height: 350,
+                      })
+                    }
+                  />
+                </Box>
+                <Heading
+                  as={ReactRouterLink}
+                  to="/hawkertown"
+                  textAlign={"left"}
+                >
+                  HawkerTown
+                </Heading>
+                <Text
+                  textAlign={"justify"}
+                  fontSize={{ base: "md", lg: "lg" }}
+                  color={"gray.500"}
+                  fontFamily="sans-serif"
+                  fontWeight={"thin"}
+                >
+                  webapp that offers a one-stop solution for hawkers <br />
+                  and suppliers to connect
+                </Text>
+              </Stack>
+            </GridItem>
+            <GridItem>
+              <Stack spacing={4} my={50} paddingLeft={100}>
+                <Box
+                  width={600}
+                  height={400}
+                  justifyContent="left"
+                  alignItems="center"
+                  display={"flex"}
+                >
+                  <Image
+                    src={code}
+                    style={{
+                      width: imageSize2.width,
+                      height: imageSize2.height,
+                      transition: "width 0.5s, height 0.5s",
+                      position: "relative",
+                    }}
+                    onMouseOver={() =>
+                      setImageSize2({
+                        width: 550,
+                        height: 400,
+                      })
+                    }
+                    onMouseOut={() =>
+                      setImageSize2({
+                        width: 500,
+                        height: 350,
+                      })
+                    }
+                    borderRadius={30}
+                  />
+                </Box>
+                <Heading as={ReactRouterLink} to="/alex" textAlign={"left"}>
+                  Alex robot
+                </Heading>
+                <Text
+                  textAlign={"justify"}
+                  fontSize={{ base: "md", lg: "lg" }}
+                  color={"gray.500"}
+                  fontFamily="sans-serif"
+                  fontWeight={"thin"}
+                  position={"relative"}
+                >
+                  a search and rescue robotic vehicle ‘Alex’ to map out the
+                  location <br /> it is placed in.
+                </Text>
+              </Stack>
+            </GridItem>
+            <GridItem>
+              <Stack spacing={4} my={50} paddingLeft={100}>
+                <Box
+                  width={600}
+                  height={400}
+                  justifyContent="left"
+                  alignItems="center"
+                  display={"flex"}
+                >
+                  <Image
+                    src={upcycle}
+                    style={{
+                      width: imageSize3.width,
+                      height: imageSize3.height,
+                      transition: "width 0.5s, height 0.5s",
+                    }}
+                    onMouseOver={() =>
+                      setImageSize3({
+                        width: 550,
+                        height: 400,
+                      })
+                    }
+                    onMouseOut={() =>
+                      setImageSize3({
+                        width: 500,
+                        height: 350,
+                      })
+                    }
+                    borderRadius={30}
+                  />
+                </Box>
+                <Heading as={ReactRouterLink} to="/upcycle" textAlign={"left"}>
+                  Upcycle
+                </Heading>
+                <Text
+                  textAlign={"justify"}
+                  fontSize={{ base: "md", lg: "lg" }}
+                  color={"gray.500"}
+                  fontFamily="sans-serif"
+                  fontWeight={"thin"}
+                >
+                  Upcycle - a desktop app dedicated to managing rental
+                  businesses.
+                </Text>
+              </Stack>
+            </GridItem>
+            <GridItem>
+              <Stack spacing={4} my={50} paddingLeft={100}>
+                <Box
+                  width={600}
+                  height={400}
+                  justifyContent="left"
+                  alignItems="center"
+                  display={"flex"}
+                >
+                  <Image
+                    src={reviewlah}
+                    style={{
+                      width: imageSize4.width,
+                      height: imageSize4.height,
+                      transition: "width 0.5s, height 0.5s",
+                    }}
+                    onMouseOver={() =>
+                      setImageSize4({
+                        width: 550,
+                        height: 400,
+                      })
+                    }
+                    onMouseOut={() =>
+                      setImageSize4({
+                        width: 500,
+                        height: 350,
+                      })
+                    }
+                    borderRadius={30}
+                  />
+                </Box>
+                <Heading textAlign={"left"}>reviewLah!</Heading>
+                <Text
+                  textAlign={"justify"}
+                  fontSize={{ base: "md", lg: "lg" }}
+                  color={"gray.500"}
+                  fontFamily="sans-serif"
+                  fontWeight={"thin"}
+                >
+                  webapp for users to review the accessibility of a location
+                </Text>
+              </Stack>
+            </GridItem>
+          </Grid>
+        </VStack>
+      )}
     </section>
   );
 }
@@ -340,65 +561,126 @@ function Contact() {
   const handleClick = () => {
     window.open("http://www.linkedin.com/in/chiew-yi-xiang");
   };
+
+  const [isMobile] = useMediaQuery("(min-width: 900px)");
+
   return (
     <section id="section-three">
-      <Stack
-        direction={"row"}
-        minH={"25vh"}
-        mx={215}
-        justifyContent={"space-between"}
-      >
-        <Flex>
-          <Stack my={15}>
-            <Text
-              fontFamily="sans-serif"
-              fontWeight={"thin"}
-              textAlign={"left"}
-            >
-              Chiew Yi Xiang —
-            </Text>
-            <Text
-              fontFamily="sans-serif"
-              fontWeight={"thin"}
-              textAlign={"left"}
-            >
-              computer engineering undergraduate
-            </Text>
-          </Stack>
-        </Flex>
-        <Flex>
-          <Stack my={15}>
-            <Text fontFamily="sans-serif" fontWeight={"thin"}>
-              social —
-            </Text>
-            <Text
-              fontFamily="sans-serif"
-              fontWeight={"thin"}
-              onClick={handleClick}
-            >
-              Linkedin
-            </Text>
-          </Stack>
-        </Flex>
-        <Flex>
-          <Stack my={15}>
-            <Text
-              fontFamily="sans-serif"
-              fontWeight={"thin"}
-              textAlign={"left"}
-            >
-              contact —
-            </Text>
-            <Text
-              fontFamily="sans-serif"
-              fontWeight={"thin"}
-              textAlign={"left"}
-            >
-              yixiangchiew@gmail.com
-            </Text>
-          </Stack>
-        </Flex>
-      </Stack>
+      {isMobile ? (
+        <HStack
+          direction={"row"}
+          minH={"25vh"}
+          justifyContent={"center"}
+          spacing={"20vw"}
+        >
+          <Flex>
+            <Stack my={15}>
+              <Text
+                fontFamily="sans-serif"
+                fontWeight={"thin"}
+                textAlign={"left"}
+              >
+                Chiew Yi Xiang —
+              </Text>
+              <Text
+                fontFamily="sans-serif"
+                fontWeight={"thin"}
+                textAlign={"left"}
+              >
+                computer engineering undergraduate
+              </Text>
+            </Stack>
+          </Flex>
+          <Flex>
+            <Stack my={15}>
+              <Text fontFamily="sans-serif" fontWeight={"thin"}>
+                social —
+              </Text>
+              <Text
+                fontFamily="sans-serif"
+                fontWeight={"thin"}
+                onClick={handleClick}
+              >
+                Linkedin
+              </Text>
+            </Stack>
+          </Flex>
+          <Flex>
+            <Stack my={15}>
+              <Text
+                fontFamily="sans-serif"
+                fontWeight={"thin"}
+                textAlign={"left"}
+              >
+                contact —
+              </Text>
+              <Text
+                fontFamily="sans-serif"
+                fontWeight={"thin"}
+                textAlign={"left"}
+              >
+                yixiangchiew@gmail.com
+              </Text>
+            </Stack>
+          </Flex>
+        </HStack>
+      ) : (
+        <VStack
+          minH={"25vh"}
+        >
+          <Flex>
+            <Stack my={15} justifyContent={"center"}>
+              <Text
+                fontFamily="sans-serif"
+                fontWeight={"thin"}
+                textAlign={"left"}
+              >
+                Chiew Yi Xiang —
+              </Text>
+              <Text
+                fontFamily="sans-serif"
+                fontWeight={"thin"}
+                textAlign={"left"}
+              >
+                computer engineering undergraduate
+              </Text>
+            </Stack>
+          </Flex>
+          <Flex>
+            <Stack my={15} justifyContent={"center"}>
+              <Text fontFamily="sans-serif" fontWeight={"thin"} textAlign={"left"}>
+                social —
+              </Text>
+              <Text
+                fontFamily="sans-serif"
+                fontWeight={"thin"}
+                onClick={handleClick}
+                textAlign={"left"}
+              >
+                Linkedin
+              </Text>
+            </Stack>
+          </Flex>
+          <Flex>
+            <Stack my={15}>
+              <Text
+                fontFamily="sans-serif"
+                fontWeight={"thin"}
+                textAlign={"left"}
+              >
+                contact —
+              </Text>
+              <Text
+                fontFamily="sans-serif"
+                fontWeight={"thin"}
+                textAlign={"left"}
+              >
+                yixiangchiew@gmail.com
+              </Text>
+            </Stack>
+          </Flex>
+        </VStack>
+      )}
     </section>
   );
 }
