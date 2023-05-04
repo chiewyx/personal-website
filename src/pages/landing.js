@@ -18,7 +18,7 @@ import {
 import { Link as ReactRouterLink } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import code from "../code.png";
-import pdf from "../resume.pdf";
+import pdf from "../Chiew Yi Xiang resume.pdf";
 import logo from "../logo.jpg";
 import robot from "../robot.jpg";
 import upcycle from "../Up.png";
@@ -340,7 +340,7 @@ function Projects() {
                     borderRadius={30}
                   />
                 </Box>
-                <Heading textAlign={"left"}>reviewLah!</Heading>
+                <Heading as={ReactRouterLink} to="/reviewlah" textAlign={"left"}>reviewLah!</Heading>
                 <Text
                   textAlign={"justify"}
                   fontSize={{ base: "md", lg: "lg" }}
