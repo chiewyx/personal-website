@@ -340,7 +340,13 @@ function Projects() {
                     borderRadius={30}
                   />
                 </Box>
-                <Heading as={ReactRouterLink} to="/reviewlah" textAlign={"left"}>reviewLah!</Heading>
+                <Heading
+                  as={ReactRouterLink}
+                  to="/reviewlah"
+                  textAlign={"left"}
+                >
+                  reviewLah!
+                </Heading>
                 <Text
                   textAlign={"justify"}
                   fontSize={{ base: "md", lg: "lg" }}
@@ -365,7 +371,7 @@ function Projects() {
           </Heading>
           <Grid justifyItems="center">
             <GridItem>
-              <Stack spacing={4} my={50} justify={"center"} >
+              <Stack spacing={4} my={50} justify={"center"}>
                 <Box
                   width={300}
                   height={200}
@@ -396,8 +402,8 @@ function Projects() {
                   fontFamily="sans-serif"
                   fontWeight={"thin"}
                 >
-                  webapp that offers a one-stop solution for <br /> hawkers 
-                  and suppliers to connect
+                  webapp that offers a one-stop solution for <br /> hawkers and
+                  suppliers to connect
                 </Text>
               </Stack>
             </GridItem>
@@ -430,8 +436,8 @@ function Projects() {
                   fontWeight={"thin"}
                   position={"relative"}
                 >
-                  a search and rescue robotic vehicle ‘Alex’ to 
-                  <br /> map out the location  it is placed in.
+                  a search and rescue robotic vehicle ‘Alex’ to
+                  <br /> map out the location it is placed in.
                 </Text>
               </Stack>
             </GridItem>
@@ -451,7 +457,6 @@ function Projects() {
                       height: 200,
                       transition: "width 0.5s, height 0.5s",
                     }}
-                
                     borderRadius={30}
                   />
                 </Box>
@@ -575,9 +580,7 @@ function Contact() {
           </Flex>
         </HStack>
       ) : (
-        <VStack
-          minH={"25vh"}
-        >
+        <VStack minH={"25vh"}>
           <Flex>
             <Stack my={15} justifyContent={"center"}>
               <Text
@@ -598,7 +601,11 @@ function Contact() {
           </Flex>
           <Flex>
             <Stack my={15} justifyContent={"center"}>
-              <Text fontFamily="sans-serif" fontWeight={"thin"} textAlign={"left"}>
+              <Text
+                fontFamily="sans-serif"
+                fontWeight={"thin"}
+                textAlign={"left"}
+              >
                 social —
               </Text>
               <Text
