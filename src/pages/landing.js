@@ -215,6 +215,7 @@ function Projects() {
                 </Text>
               </Stack>
             </GridItem>
+
             <GridItem>
               <Stack spacing={4} my={50} paddingLeft={100}>
                 <Box
@@ -225,21 +226,20 @@ function Projects() {
                   display={"flex"}
                 >
                   <Image
-                    src={code}
+                    src={reviewlah}
                     style={{
-                      width: imageSize2.width,
-                      height: imageSize2.height,
+                      width: imageSize4.width,
+                      height: imageSize4.height,
                       transition: "width 0.5s, height 0.5s",
-                      position: "relative",
                     }}
                     onMouseOver={() =>
-                      setImageSize2({
+                      setImageSize4({
                         width: 550,
                         height: 400,
                       })
                     }
                     onMouseOut={() =>
-                      setImageSize2({
+                      setImageSize4({
                         width: 500,
                         height: 350,
                       })
@@ -247,8 +247,12 @@ function Projects() {
                     borderRadius={30}
                   />
                 </Box>
-                <Heading as={ReactRouterLink} to="/alex" textAlign={"left"}>
-                  Alex robot
+                <Heading
+                  as={ReactRouterLink}
+                  to="/reviewlah"
+                  textAlign={"left"}
+                >
+                  reviewLah!
                 </Heading>
                 <Text
                   textAlign={"justify"}
@@ -256,10 +260,8 @@ function Projects() {
                   color={"gray.500"}
                   fontFamily="sans-serif"
                   fontWeight={"thin"}
-                  position={"relative"}
                 >
-                  a search and rescue robotic vehicle ‘Alex’ to map out the
-                  location <br /> it is placed in.
+                  webapp for users to review the accessibility of a location
                 </Text>
               </Stack>
             </GridItem>
@@ -319,20 +321,21 @@ function Projects() {
                   display={"flex"}
                 >
                   <Image
-                    src={reviewlah}
+                    src={code}
                     style={{
-                      width: imageSize4.width,
-                      height: imageSize4.height,
+                      width: imageSize2.width,
+                      height: imageSize2.height,
                       transition: "width 0.5s, height 0.5s",
+                      position: "relative",
                     }}
                     onMouseOver={() =>
-                      setImageSize4({
+                      setImageSize2({
                         width: 550,
                         height: 400,
                       })
                     }
                     onMouseOut={() =>
-                      setImageSize4({
+                      setImageSize2({
                         width: 500,
                         height: 350,
                       })
@@ -340,12 +343,8 @@ function Projects() {
                     borderRadius={30}
                   />
                 </Box>
-                <Heading
-                  as={ReactRouterLink}
-                  to="/reviewlah"
-                  textAlign={"left"}
-                >
-                  reviewLah!
+                <Heading as={ReactRouterLink} to="/alex" textAlign={"left"}>
+                  Alex robot
                 </Heading>
                 <Text
                   textAlign={"justify"}
@@ -353,8 +352,10 @@ function Projects() {
                   color={"gray.500"}
                   fontFamily="sans-serif"
                   fontWeight={"thin"}
+                  position={"relative"}
                 >
-                  webapp for users to review the accessibility of a location
+                  a search and rescue robotic vehicle ‘Alex’ to map out the
+                  location <br /> it is placed in.
                 </Text>
               </Stack>
             </GridItem>
@@ -476,7 +477,7 @@ function Projects() {
               </Stack>
             </GridItem>
             <GridItem>
-              <Stack spacing={4} my={50} paddingLeft={100}>
+              <Stack spacing={4} my={50} justify={"center"}>
                 <Box
                   width={300}
                   height={200}
@@ -493,7 +494,13 @@ function Projects() {
                     borderRadius={30}
                   />
                 </Box>
-                <Heading textAlign={"left"}>reviewLah!</Heading>
+                <Heading
+                  as={ReactRouterLink}
+                  to="/reviewlah"
+                  textAlign={"left"}
+                >
+                  reviewLah!
+                </Heading>
                 <Text
                   textAlign={"justify"}
                   fontSize={{ base: "md", lg: "lg" }}
