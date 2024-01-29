@@ -25,6 +25,8 @@ import upcycle from "../Up.png";
 import reviewlah from "../2.png";
 import { useState } from "react";
 import AboutPage from "./about.js";
+import CaptionCarousel from "../components/carousel";
+import { IoLogoLinkedin, IoMdMail } from "react-icons/io";
 
 function About() {
   const [imageSize, setImageSize] = useState({
@@ -37,12 +39,13 @@ function About() {
   return (
     <section id="section-one">
       <HStack
-        minH={"75vh"}
+        minH={"65vh"}
         direction={{ base: "column", md: "row" }}
         minWidth={"50%"}
+         /* marginY={useBreakpointValue({ base: 10, md: 0 })} */
       >
         <Flex flex={1} justify={"center"} margin="auto">
-          <Stack spacing={6} w={"full"} maxW={"lg"}>
+          <Stack spacing={6} w={"80%"} maxW={"lg"}>
             <Heading fontSize={"7xl"}>
               <Text
                 as={"span"}
@@ -362,7 +365,7 @@ function Projects() {
           </Grid>
         </VStack>
       ) : (
-        <VStack minH={"165vh"} justifyContent="center">
+        <VStack spacing={10} justifyContent="center" mt={10}>
           <Heading
             fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}
             justifyContent={"center"}
@@ -370,149 +373,7 @@ function Projects() {
           >
             Projects
           </Heading>
-          <Grid justifyItems="center">
-            <GridItem>
-              <Stack spacing={4} my={50} justify={"center"}>
-                <Box
-                  width={300}
-                  height={200}
-                  justifyContent="left"
-                  alignItems="center"
-                  display={"flex"}
-                >
-                  <Image
-                    src={logo}
-                    borderRadius={30}
-                    style={{
-                      width: 300,
-                      height: 200,
-                    }}
-                  />
-                </Box>
-                <Heading
-                  as={ReactRouterLink}
-                  to="/hawkertown"
-                  textAlign={"left"}
-                >
-                  HawkerTown
-                </Heading>
-                <Text
-                  textAlign={"justify"}
-                  fontSize={{ base: "md", lg: "lg" }}
-                  color={"gray.500"}
-                  fontFamily="sans-serif"
-                  fontWeight={"thin"}
-                >
-                  webapp that offers a one-stop solution for <br /> hawkers and
-                  suppliers to connect
-                </Text>
-              </Stack>
-            </GridItem>
-            <GridItem>
-              <Stack spacing={4} my={50} justify={"center"}>
-                <Box
-                  width={300}
-                  height={200}
-                  justifyContent="left"
-                  alignItems="center"
-                  display={"flex"}
-                >
-                  <Image
-                    src={code}
-                    borderRadius={30}
-                    style={{
-                      width: 300,
-                      height: 200,
-                    }}
-                  />
-                </Box>
-                <Heading as={ReactRouterLink} to="/alex" textAlign={"left"}>
-                  Alex robot
-                </Heading>
-                <Text
-                  textAlign={"justify"}
-                  fontSize={{ base: "md", lg: "lg" }}
-                  color={"gray.500"}
-                  fontFamily="sans-serif"
-                  fontWeight={"thin"}
-                  position={"relative"}
-                >
-                  a search and rescue robotic vehicle ‘Alex’ to
-                  <br /> map out the location it is placed in.
-                </Text>
-              </Stack>
-            </GridItem>
-            <GridItem>
-              <Stack spacing={4} my={50} justify={"center"}>
-                <Box
-                  width={300}
-                  height={200}
-                  justifyContent="left"
-                  alignItems="center"
-                  display={"flex"}
-                >
-                  <Image
-                    src={upcycle}
-                    style={{
-                      width: 300,
-                      height: 200,
-                      transition: "width 0.5s, height 0.5s",
-                    }}
-                    borderRadius={30}
-                  />
-                </Box>
-                <Heading as={ReactRouterLink} to="/upcycle" textAlign={"left"}>
-                  Upcycle
-                </Heading>
-                <Text
-                  textAlign={"justify"}
-                  fontSize={{ base: "md", lg: "lg" }}
-                  color={"gray.500"}
-                  fontFamily="sans-serif"
-                  fontWeight={"thin"}
-                >
-                  Upcycle - a desktop app dedicated to <br />
-                  managing rental businesses.
-                </Text>
-              </Stack>
-            </GridItem>
-            <GridItem>
-              <Stack spacing={4} my={50} justify={"center"}>
-                <Box
-                  width={300}
-                  height={200}
-                  justifyContent="left"
-                  alignItems="center"
-                  display={"flex"}
-                >
-                  <Image
-                    src={reviewlah}
-                    style={{
-                      width: 300,
-                      height: 200,
-                    }}
-                    borderRadius={30}
-                  />
-                </Box>
-                <Heading
-                  as={ReactRouterLink}
-                  to="/reviewlah"
-                  textAlign={"left"}
-                >
-                  reviewLah!
-                </Heading>
-                <Text
-                  textAlign={"justify"}
-                  fontSize={{ base: "md", lg: "lg" }}
-                  color={"gray.500"}
-                  fontFamily="sans-serif"
-                  fontWeight={"thin"}
-                >
-                  webapp for users to review the accessibility of a location
-                </Text>
-              </Stack>
-            </GridItem>
-          </Grid>
+          <CaptionCarousel />
         </VStack>
       )}
     </section>
@@ -587,7 +448,9 @@ function Contact() {
           </Flex>
         </HStack>
       ) : (
-        <VStack minH={"25vh"}>
+        <div>
+        <HStack spacing={10} margin="auto" justify={"center"} mt={10}>
+          <IoLogoLinkedin size={40} onClick={handleClick}/>
           <Flex>
             <Stack my={15} justifyContent={"center"}>
               <Text
@@ -595,44 +458,7 @@ function Contact() {
                 fontWeight={"thin"}
                 textAlign={"left"}
               >
-                Chiew Yi Xiang —
-              </Text>
-              <Text
-                fontFamily="sans-serif"
-                fontWeight={"thin"}
-                textAlign={"left"}
-              >
-                computer engineering undergraduate
-              </Text>
-            </Stack>
-          </Flex>
-          <Flex>
-            <Stack my={15} justifyContent={"center"}>
-              <Text
-                fontFamily="sans-serif"
-                fontWeight={"thin"}
-                textAlign={"left"}
-              >
-                social —
-              </Text>
-              <Text
-                fontFamily="sans-serif"
-                fontWeight={"thin"}
-                onClick={handleClick}
-                textAlign={"left"}
-              >
-                Linkedin
-              </Text>
-            </Stack>
-          </Flex>
-          <Flex>
-            <Stack my={15}>
-              <Text
-                fontFamily="sans-serif"
-                fontWeight={"thin"}
-                textAlign={"left"}
-              >
-                contact —
+                email —
               </Text>
               <Text
                 fontFamily="sans-serif"
@@ -642,8 +468,9 @@ function Contact() {
                 yixiangchiew@gmail.com
               </Text>
             </Stack>
-          </Flex>
-        </VStack>
+            </Flex>
+        </HStack>
+        </div>
       )}
     </section>
   );
