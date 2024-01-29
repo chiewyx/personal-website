@@ -17,7 +17,7 @@ import reviewlah from "../2.png";
 import upcycle from "../Up.png";
 import hawkertown from "../logo.jpg";
 import code from "../code.png";
-import alex from "../alex.png"
+import alex from "../alex.png";
 import { Link as ReactRouterLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 
@@ -44,7 +44,7 @@ export default function CaptionCarousel() {
   const top = useBreakpointValue({ base: "90%", md: "50%" });
   const side = useBreakpointValue({ base: "30%", md: "40px" });
 
-  const links = ["/hawkertown", "/reviewlah", "/upcycle", "/alex"]
+  const links = ["/hawkertown", "/reviewlah", "/upcycle", "/alex"];
 
   // This list contains all the data for carousels
   // This can be static or loaded from a server
@@ -124,22 +124,25 @@ export default function CaptionCarousel() {
       </IconButton>
       {/* Slider */}
       <Slider {...settings} ref={(slider) => setSlider(slider)}>
-        {cards.map((card, index) => (
-          <Box
-            borderRadius={30}
-            key={index}
-            height={"md"}
-            position="relative"
-            backgroundPosition="center"
-            backgroundRepeat="no-repeat"
-            backgroundSize="cover"
-            backgroundImage={`url(${card.image})`}
-            as={Link} 
-            to={links[index]}
-          >
-            {/* This is the block you need to change, to customize the caption */}
-          </Box>
-        ))}
+        {cards.map((card, index) => {
+          console.log(card.page);
+          return (
+            <Box
+              borderRadius={30}
+              key={index}
+              height={"md"}
+              position="relative"
+              backgroundPosition="center"
+              backgroundRepeat="no-repeat"
+              backgroundSize="cover"
+              backgroundImage={`url(${card.image})`}
+              as={ReactRouterLink}
+              to={card.page}
+            >
+              {/* This is the block you need to change, to customize the caption */}
+            </Box>
+          );
+        })}
       </Slider>
     </Box>
   );
